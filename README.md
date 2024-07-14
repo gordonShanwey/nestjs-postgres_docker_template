@@ -1,73 +1,103 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+Sure, here is the updated README file with the requested changes.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+---
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# NestJS Template Project
 
-## Description
+This project is a template for creating a NestJS application with PostgreSQL, Docker, and Swagger documentation.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Getting Started
 
-## Installation
+### Prerequisites
 
-```bash
-$ npm install
-```
+- Node.js (version 14 or later)
+- Docker
+- Docker Compose
 
-## Running the app
+### Project Setup
 
-```bash
-# development
-$ npm run start
+1. **Clone the repository**:
 
-# watch mode
-$ npm run start:dev
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
 
-# production mode
-$ npm run start:prod
-```
+2. **Install dependencies**:
 
-## Test
+   ```bash
+   npm install
+   ```
 
-```bash
-# unit tests
-$ npm run test
+3. **Create a `.env` file in the root directory** with the following content:
 
-# e2e tests
-$ npm run test:e2e
+   ```env
+   POSTGRES_HOST=localhost
+   POSTGRES_PORT=5432
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=password
+   POSTGRES_DB=test
+   PGADMIN_DEFAULT_EMAIL=admin@admin.com
+   PGADMIN_DEFAULT_PASSWORD=admin
+   ```
 
-# test coverage
-$ npm run test:cov
-```
+### Running the Application
 
-## Support
+1. **Build and start the application** using Docker Compose:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+   ```bash
+   docker-compose -f docker-compose.dev.yml up --build
+   ```
 
-## Stay in touch
+2. **Access the application**:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+    - API: `http://localhost:3000`
+    - Swagger Documentation: `http://localhost:3000/api`
 
-## License
+### Project Structure
 
-Nest is [MIT licensed](LICENSE).
+- `src/app.module.ts`: Main application module.
+- `src/database/database.module.ts`: Database module.
+- `src/database/database.service.ts`: Database service to handle database operations.
+- `src/database/database.controller.ts`: Database controller to expose the API endpoints.
+- `src/database/dto/timestamp.dto.ts`: DTO for the timestamp response.
+- `src/reports/reports.entity.ts`: Example entity for database operations.
+- `.env`: Environment configuration file.
+- `Dockerfile`: Docker configuration file.
+- `docker-compose.yml`: Docker Compose configuration file.
+- `docker-compose.prod.yml`: Production Docker Compose configuration file.
+
+### Swagger Documentation
+
+Swagger is configured in `src/main.ts` to provide API documentation. The documentation can be accessed
+at `http://localhost:3000/api`.
+
+### Using this Project as a Template
+
+To use this project as a template for your own NestJS applications:
+
+1. **Fork the repository**:
+
+   Click the "Fork" button on the top right corner of the repository page on GitHub to create a copy of this repository
+   under your own GitHub account.
+
+2. **Clone your forked repository**:
+
+   ```bash
+   git clone <your-forked-repo-url>
+   cd <repository-directory>
+   ```
+
+3. **Follow the Project Setup steps** to install dependencies and configure the environment.
+
+This will allow you to customize and extend the template to suit your specific needs.
+
+### Production Setup
+
+A `docker-compose.prod.yml` file is prepared for production deployment. This file can be used to run the application in
+a production environment with optimized settings.
+
+### License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
