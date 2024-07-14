@@ -1,5 +1,3 @@
-
-
 # NestJS Template Project
 
 This project is a template for creating a NestJS application with PostgreSQL, Docker, and Swagger documentation.
@@ -20,14 +18,24 @@ This project is a template for creating a NestJS application with PostgreSQL, Do
    git clone <repository-url>
    cd <repository-directory>
    ```
+2. **Remove Git History and Initialize a New Repository**
 
-2. **Install dependencies**:
+   To start with a clean slate, remove the existing Git history and reinitialize the repository.
+
+   ```bash
+   rm -rf .git
+   git init
+   git add .
+   git commit -m "Initial commit"
+   ```
+
+3. **Install dependencies**:
 
    ```bash
    npm install
    ```
 
-3. **Create a `.env` file in the root directory** with the following content:
+4. **Create a `.env` file in the root directory** with the following content:
 
    ```env
    POSTGRES_HOST=localhost
@@ -70,26 +78,6 @@ This project is a template for creating a NestJS application with PostgreSQL, Do
 Swagger is configured in `src/main.ts` to provide API documentation. The documentation can be accessed
 at `http://localhost:3000/api`.
 
-### Using this Project as a Template
-
-To use this project as a template for your own NestJS applications:
-
-1. **Fork the repository**:
-
-   Click the "Fork" button on the top right corner of the repository page on GitHub to create a copy of this repository
-   under your own GitHub account.
-
-2. **Clone your forked repository**:
-
-   ```bash
-   git clone <your-forked-repo-url>
-   cd <repository-directory>
-   ```
-
-3. **Follow the Project Setup steps** to install dependencies and configure the environment.
-
-This will allow you to customize and extend the template to suit your specific needs.
-
 ### Production Setup
 
 A `docker-compose.prod.yml` file is prepared for production deployment. This file can be used to run the application in
@@ -98,4 +86,6 @@ a production environment with optimized settings.
 ### License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+
 
