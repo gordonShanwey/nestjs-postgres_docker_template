@@ -1,6 +1,4 @@
-Sure, here is the updated README file with the requested changes.
 
----
 
 # NestJS Template Project
 
