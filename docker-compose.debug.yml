@@ -1,0 +1,6 @@
+services:
+  app:
+    command: npm run start:debug-docker
+    ports:
+      - 3000:3000
+      - 9229:9229

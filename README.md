@@ -38,7 +38,7 @@ This project is a template for creating a NestJS application with PostgreSQL, Do
 4. **Create a `.env` file in the root directory** with the following content:
 
    ```env
-   POSTGRES_HOST=localhost
+   POSTGRES_HOST=db
    POSTGRES_PORT=5432
    POSTGRES_USER=postgres
    POSTGRES_PASSWORD=password
